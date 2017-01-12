@@ -1,0 +1,19 @@
+<import src="post_item/news_template" />
+<view>
+    <swiper autoplay="true" interval="4000" indicator-dots="true">
+        <swiper-item>
+            <image src="/images/post/xiaolong.jpg"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="/images/post/vr.png"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="/images/post/sls.jpg"></image>
+        </swiper-item>
+    </swiper>
+    <block wx:for="{{postList}}" wx:for-item="item" wx:for-index="idx">
+      <view data_postId="{{item.postId}}">
+        <template is="postItem" data="{{...item}}" />
+      </view>
+    </block>
+</view>
